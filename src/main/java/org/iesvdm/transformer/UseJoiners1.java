@@ -1,5 +1,6 @@
 package org.iesvdm.transformer;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -12,6 +13,9 @@ import java.util.Scanner;
 
 public class UseJoiners1
 {
+
+    // Main prueba ejercicio 3;
+    /*
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
@@ -26,6 +30,14 @@ public class UseJoiners1
         ls3 = Joiners.zipLists(adder,ls1,ls2);
         System.out.println("Adding corresponding integers in the lists gives:\n"+ls3);
     }
+    */
+
+    //Main prueba ejercicio 4
+
+    public static void main(String[] args){
+        zipArrayLists();
+    }
+
 
     public static LispList<Integer> parseIntLispList(String str)
     {
@@ -41,6 +53,23 @@ public class UseJoiners1
             list = list.cons(Integer.parseInt(num));
         }
         return list;
+    }
+
+
+
+    // Ejercicio 4
+
+    public static void zipArrayLists() {
+        ArrayList<String> names = new ArrayList<>();
+        names.add("Manuel");
+        names.add("Alejandro");
+
+        ArrayList<Integer> ages = new ArrayList<>();
+        ages.add(19);
+        ages.add(21);
+
+        ArrayList<String> zippedList = Joiners.zipArrayLists(names, ages, (name, age) -> name + " -> " + age + " años");
+        zippedList.forEach(System.out::println);
     }
 
 }
