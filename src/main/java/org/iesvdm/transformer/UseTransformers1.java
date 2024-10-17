@@ -2,6 +2,10 @@ package org.iesvdm.transformer;
 
 import java.util.*;
 
+//This is the Main class who uses the Transformers class.
+// This is an example.
+
+
 public class UseTransformers1
 {
     public static void main(String[] args) throws Exception
