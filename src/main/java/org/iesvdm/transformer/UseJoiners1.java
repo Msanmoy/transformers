@@ -2,6 +2,14 @@ package org.iesvdm.transformer;
 
 import java.util.Scanner;
 
+/*
+    EXPLICACIÓN DE CÓDIGO.
+    Este programa toma dos listas de enteros, suma sus elementos
+    y muestra una lista nueva.
+    Este código se basa en la interacción del usuario.
+ */
+
+
 public class UseJoiners1
 {
     public static void main(String[] args)
