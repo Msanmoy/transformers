@@ -1,5 +1,10 @@
 package org.iesvdm;
 
+import org.iesvdm.transformer.LispList;
+import org.iesvdm.transformer.Transformer;
+
+import static org.iesvdm.transformer.Transformers.transformList;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -13,5 +18,22 @@ public class Main {
             // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
             System.out.println("i = " + i);
         }
+
+
+        //Ejercicio5 prueba
+        System.out.println("Prueba Ejercicio5");
+
+            LispList<Integer> lista = LispList.empty();
+            lista = lista.cons(5).cons(4).cons(3).cons(2).cons(1);
+
+            Transformer<Integer> doubleTransformer = (Integer x) -> x * 2;
+
+            LispList<Integer> transformedList = transformList(doubleTransformer, lista);
+
+            System.out.println("Lista original: " + lista);
+            System.out.println("Lista transformada: " + transformedList);
+
     }
+
+
 }

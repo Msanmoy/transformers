@@ -1,6 +1,7 @@
 package org.iesvdm.transformer;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 //This is the Main class who uses the Transformers class.
 // This is an example.

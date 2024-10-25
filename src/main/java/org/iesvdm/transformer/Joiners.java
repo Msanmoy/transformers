@@ -2,6 +2,7 @@ package org.iesvdm.transformer;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Joiners
 {
@@ -28,5 +29,30 @@ public class Joiners
         }
 
         return result;
+    }
+
+    //Ejercicio 8
+    public static <T> T fold(ArrayList<T> lista, Joiner<T> joiner){
+    Iterator<T> it = lista.iterator();
+    T result = it.next();
+    while(it.hasNext()){
+        result = joiner.join(result,it.next());
+    }
+
+    return result;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        JoinerString joiner = new JoinerString();
+
+        list.add("Hello");
+        list.add("World");
+
+        String suma = "";
+
+        suma = fold(list,joiner);
+
+        System.out.println(suma);
     }
 }

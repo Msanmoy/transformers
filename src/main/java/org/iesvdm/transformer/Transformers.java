@@ -23,5 +23,19 @@ public class Transformers
             a.set(i, tran.transform(a.get(i)));
         }
     }
+
+
+    //Ejercicio5
+
+    public static <T> LispList<T> transformList(Transformer<T> transformer, LispList<T> list) {
+        if (list.isEmpty()) {
+            return LispList.empty();
+        } else {
+            T head = transformer.transform(list.head());
+            LispList<T> lista = transformList(transformer, list.tail());
+
+            return lista.cons(head);
+        }
+    }
 }
 
